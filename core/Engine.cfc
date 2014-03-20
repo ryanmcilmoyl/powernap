@@ -419,7 +419,7 @@
 		<cfheader name="X-#arguments.header#-Error" value="#arguments.cfcatch.message#" />
 	
 		<!--- // provide optional detail // --->
-		<cfif attributes.debug>
+		<cfif arguments.debug>
 			<cfheader name="X-#arguments.header#-Error-Detail" value="#arguments.cfcatch.detail#" />
 			<cfif structKeyExists(arguments.cfcatch, "TagContext") AND isArray(arguments.cfcatch.TagContext) AND arrayLen(arguments.cfcatch.TagContext)>
 				<cfheader name="X-#arguments.header#-Error-Location" value="#arguments.cfcatch.TagContext[1].Template# (Line #arguments.cfcatch.TagContext[1].Line#)" />
